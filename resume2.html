@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>김경욱 온라인 이력서</title>
+  <link rel="stylesheet" href="resume2.css">
+
+  <!-- 폰트어썸 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+<body>
+  <h1 class="hidden">자기소개서</h1>
+  <article class="wrap">
+    <h2 class="hidden">이력서</h2>
+    <div class="inner">
+      <section>
+        <h2 class="hidden">자기소개</h2>
+        <div>
+          <img src="./kkw.png" alt="">
+          <ul>
+            <li>안녕하세요! 퍼블리셔 2년 경력의 신입 개발자 박우빈입니다.</li>
+            <li>개발자가 되기 전부터 몰입하는 즐거움을 따라 살다가,
+            지금은 개발에 푹 빠져 있습니다.</li>
+            <li>무엇보다도 꾸준함의 진짜 가치를 알기에
+            학습한 것을 Github에 남기고, 기술 블로그 운영을 하고 있습니다.</li>
+            <li>Clean Code와 Test에 대한 고민을 생활화합니다.</li>
+            <li>추상과 구체를 넘나드는 접근을 지향합니다.</li>
+            <li>아름다운 것과 커피 ☕ , 그리고 [**함께 자라기**](https://wbluke.tistory.com/31)에 관심이 많습니다.</li>
+          </ul>
+        </div>
+        <div>
+          <span>Contact & Channel</span>
+          <ul>
+            <li>Email | ru0dn7@gmail.com</li>
+            <li>Github | <a href="https://github.com/ru0dn7" target="_blank">https://github.com/ru0dn7</a></li>
+            <li>Profile | <a href="https://kkwoou.mycafe24.com/profile" target="_blank">https://kkwoou.mycafe24.com/profile</a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="education-section">
+        <h2 class="section-toggle">학력사항</h2>
+        <div class="section-content">
+          <ul class="education-list">
+            <li class="education-item">
+              <div class="school-info">
+                <span class="school-name">국가평생교육진흥원</span>
+                <span class="education-period">2019. 03 ~ 2021. 08</span>
+              </div>
+              <p class="education-details">경영학과 / 졸업</p>
+            </li>
+            <li class="education-item">
+              <div class="school-info">
+                <span class="school-name">국가평생교육진흥원</span>
+                <span class="education-period">경영학과 / 졸업</span>
+              </div>
+              <p class="education-details">2019. 03 ~ 2021. 08</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2 class="hidden">
+          자격사항  
+        </h2>
+      </section>
+      <section>
+        <h2 class="hidden">
+          프로젝트
+        </h2>
+      </section>
+      <section>
+        <h2 class="hidden">
+          문의사항
+        </h2>
+      </section>
+    </div>
+  </article>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sectionToggle = document.querySelector('.section-toggle');
+      const sectionContent = document.querySelector('.section-content');
+      
+      sectionToggle.addEventListener('click', function() {
+        this.classList.toggle('on');
+        sectionContent.classList.toggle('on');
+      });
+    });
+  </script>
+</body>
+</html>
