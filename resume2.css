@@ -13,52 +13,101 @@ a:hover {
 
 .wrap {
   max-width: 1920px;
-  margin: 150px auto;
+  margin: 0 auto;
+  padding: 100px;
+  position: relative;
 }
 
 .inner {
-  border: 1px solid blue;
-  width: 60%;
+  width: 65%;
   margin: 0 auto;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, .2);
+}
+
+.inner::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: url(./95381.jpg) no-repeat center;
+  background-size: cover;
+}
+
+section {
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+section h2 {
+  padding: 0 50px;
 }
 
 section:nth-of-type(1) {
-  border: 1px solid green;
   height: auto;
-
-  gap: 2vw;
+  padding: 30px;
 }
 
-section:nth-of-type(1) div img {
-  width: 20%;
-  height: 100%;
+section:nth-of-type(1) .intro {
+  display: flex;
+  gap: 1.5vw;
 }
 
-section:nth-of-type(1) div {
-  border: 1px solid orange;
+section:nth-of-type(1) .contact {
   display: flex;
   align-items: center;
   gap: 1.5vw;
 }
 
-section:nth-of-type(1) div ul li {
-  font-size: 1vw;
+section:nth-of-type(1) .contact span {
+  width: 20%;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
 }
 
-section {
-  border: 1px solid red;
+section:nth-of-type(1) .intro img {
+  width: 20%;
+  height: 100%;
 }
 
-.education-section {
-  margin: 2rem 0;
+section:nth-of-type(1) .intro ul li {
+  font-size: .9vw;
+  margin: 10px 0;
+}
+
+section:nth-of-type(1) .intro ul li span {
+  font-weight: 700;
+  font-size: 120%;
+  color: #333;
+}
+
+/* Accordion Section Styles */
+.accordion-section {
+  margin: 1.5rem 0;
+  background: #fff;
 }
 
 .section-toggle {
   cursor: pointer;
   position: relative;
-  padding-right: 30px;
-  padding: 0 50px;
+  padding: 15px 50px;
+  margin: 0;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
 
+.section-toggle:hover {
+  background: #eee;
 }
 
 .section-toggle::after {
@@ -76,46 +125,63 @@ section {
 }
 
 .section-content {
-  max-height: 1000px;
+  max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-out;
 }
 
 .section-content.on {
-  max-height: 0;
+  max-height: 2000px;
+  transition: max-height 0.5s ease-in;
 }
 
-.education-list {
+/* Info List Styles */
+.info-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.education-item {
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  margin-bottom: 0.5rem;
-  padding: 1rem;
+.info-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 15px 50px;
+  transition: background-color 0.3s ease;
 }
 
-.school-info {
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-item:hover {
+  background-color: #f8f9fa;
+}
+
+.item-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
-.school-name {
-  font-weight: bold;
+.item-name {
+  font-weight: 600;
+  color: #333;
 }
 
-.education-period {
+.item-period {
   color: #666;
   font-size: 0.9em;
 }
 
-.education-details {
+.item-details {
   margin: 0;
   color: #444;
+  font-size: 0.95em;
+  line-height: 1.4;
+
+  width: 80%;
+
+  word-break: auto-phrase;
 }
 
 @media screen and (max-width:1280px) {
@@ -125,5 +191,31 @@ section {
 
   section:nth-of-type(1) ul li {
     font-size: 1.2vw;
+  }
+
+  .section-toggle,
+  .info-item {
+    padding: 15px 30px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .inner {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .wrap {
+    padding: 50px 20px;
+  }
+
+  .item-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .item-period {
+    font-size: 0.85em;
   }
 }
